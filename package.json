@@ -30,5 +30,23 @@
     }
   },
   "engines": { "node": ">=20" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trouvaille-xx/dsh-note-save.git"
+  },
+  "homepage": "https://github.com/Trouvaille-xx/dsh-note-save#readme",
+  "bugs": { "url": "https://github.com/Trouvaille-xx/dsh-note-save/issues" },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "obsidian",
+    "siyuan",
+    "joplin",
+    "notion",
+    "yuque",
+    "ima",
+    "notes"
+  ],
   "license": "MIT"
 }
