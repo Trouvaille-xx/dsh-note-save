@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Save note">
+  <title>Save note</title>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#1F7A5C"/>
+  <path d="M22 15h13.5L44 23.5V47a2.5 2.5 0 0 1-2.5 2.5h-19A2.5 2.5 0 0 1 20 47V17.5A2.5 2.5 0 0 1 22 15z"
+        fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M35 15.5v8a1 1 0 0 0 1 1h8"
+        fill="none" stroke="#9FE3C8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,5 @@
+# Bundle patch: one host row. The `dsh.client` section of package.json makes
+# the web app load ./client.js as this row's browser half.
+- insert:
+    - id: dsh-note-save
+      name: dsh-note-save
