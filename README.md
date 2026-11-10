@@ -51,11 +51,29 @@ DSH 自带的导出只会下载整段会话日志的 ZIP；社区里每个笔记
 
 ## 安装
 
+先把仓库克隆到本地：
+
 ```
-plugin_manager action=install_bundle target="D:\DemandOS\dsh-note-save"
+git clone https://github.com/Trouvaille-xx/dsh-note-save.git
+```
+
+然后在 DSH 里把它装成 bundle（路径换成你克隆到的位置）：
+
+```
+plugin_manager action=install_bundle target="<克隆下来的目录绝对路径>"
 ```
 
 装完**重启一次 DSH**（`install_bundle` 返回 `application: restart-required`）。
+
+> 改完插件代码后如果只看到新界面、接口却报「未知接口」，说明前端热更新了而宿主没有——把插件行停用再启用一次，或重启 DSH。
+
+## 开发
+
+```
+node tests-lead/all.test.mjs     # 全部 6 个套件，144 条
+```
+
+不要用 `node --test`：它会 fork 子进程，在 DSH 的沙箱里会以 `spawn EPERM` 失败；直接 `node <file>` 是单进程跑的同一批断言。
 
 ## 配置
 
