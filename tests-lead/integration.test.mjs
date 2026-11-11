@@ -184,7 +184,7 @@ test('GET /note-save/state answers the documented envelope', async () => {
   assert.equal(response.status, 200)
   assert.equal(response.json.ok, true)
   const value = response.json.value
-  assert.equal(value.targets.length, 6)
+  assert.equal(value.targets.length, 7)
   assert.equal(value.defaultTarget, 'obsidian')
   const obsidian = value.targets.find((target) => target.id === 'obsidian')
   assert.equal(obsidian.configured, true)
@@ -273,7 +273,7 @@ test('GET /note-save/schema describes every target for the settings page', async
   const response = await call(plug, { path: '/schema' })
   assert.equal(response.status, 200)
   const targets = response.json.value.targets
-  assert.equal(targets.length, 6)
+  assert.equal(targets.length, 7)
   for (const target of targets) {
     assert.equal(typeof target.id, 'string')
     assert.equal(typeof target.label, 'string')
@@ -361,7 +361,7 @@ test('the agent tool lists targets without a session, and previews with one', as
   const { definition } = mountPlugin({ rowConfig: rowConfigForVault() }).registered.tools[0]
 
   const list = await definition.execute({ action: 'list' }, { agent: { id: 'session-1' } })
-  assert.equal(list.targets.length, 6)
+  assert.equal(list.targets.length, 7)
 
   const preview = await definition.execute({ action: 'preview', scope: 'session' }, { agent: { id: 'session-1' } })
   assert.match(preview.markdown, /单条、本轮、整段会话三种/)

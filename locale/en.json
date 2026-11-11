@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Note save",
-    "description": "Save a conversation, a turn or one message as a note in Obsidian, SiYuan, Joplin, Notion or Yuque, or create an ima note."
+    "description": "Save a conversation, a turn or one message as a note in Obsidian, SiYuan, Joplin, Notion or Yuque, or create an ima note or a Feishu Doc."
   },
   "action": {
     "save": "Save as note",

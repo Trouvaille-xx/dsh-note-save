@@ -28,7 +28,7 @@
       "inject": ["@deepseek-ai/dsh-client-ui-conversation"]
     }
   },
-  "engines": { "node": ">=20" },
+  "engines": { "node": ">=20", "dsh": ">=0.1.2-rc.1 <0.3.0" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Trouvaille-xx/dsh-note-save.git"

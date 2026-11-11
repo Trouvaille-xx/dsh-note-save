@@ -440,6 +440,7 @@ test('the settings page is a top-tab layout: one tab strip, one config pane', as
       { id: 'notion', label: 'Notion', fields: [] },
       { id: 'yuque', label: 'Yuque', fields: [] },
       { id: 'ima', label: 'ima', fields: [] },
+      { id: 'feishu', label: 'Feishu', fields: [] },
     ],
   }
   const config = {
@@ -468,10 +469,10 @@ test('the settings page is a top-tab layout: one tab strip, one config pane', as
   assert.ok(tablist !== null, 'the page must render a target tab strip (role=tablist)')
   assert.equal(tablist.props['aria-orientation'], 'horizontal', 'the tabs sit across the top')
   const tabs = findAll(tablist, (node) => node.props && node.props.role === 'tab')
-  assert.equal(tabs.length, 6, 'one tab per target')
+  assert.equal(tabs.length, 7, 'one tab per target')
   assert.deepEqual(
     tabs.map((tab) => visibleText(tab).trim()),
-    ['Obsidian', 'SiYuan', 'Joplin', 'Notion', 'Yuque', 'ima'],
+    ['Obsidian', 'SiYuan', 'Joplin', 'Notion', 'Yuque', 'ima', 'Feishu'],
   )
 
   // Below: exactly one pane, showing only the selected target.
@@ -671,7 +672,7 @@ test('the wire contract matches: state, preview and save answer the panel envelo
 
   const state = await (await host.fetchImpl(`${ORIGIN}/note-save/state`)).json()
   assert.equal(state.ok, true)
-  assert.equal(state.value.targets.length, 6)
+  assert.equal(state.value.targets.length, 7)
   assert.ok(state.value.configPath.endsWith('note-save.json'))
   assert.equal(state.value.defaultTarget, 'obsidian')
 
@@ -705,7 +706,7 @@ test('the settings endpoints answer the page', async () => {
 
   const schema = await (await host.fetchImpl(`${ORIGIN}/note-save/schema`)).json()
   assert.equal(schema.ok, true)
-  assert.equal(schema.value.targets.length, 6)
+  assert.equal(schema.value.targets.length, 7)
 
   const config = await (await host.fetchImpl(`${ORIGIN}/note-save/config`)).json()
   assert.equal(config.ok, true)
@@ -724,7 +725,7 @@ test('the guide is a self-contained HTML page that covers every target', async (
 
   assert.match(html, /^<!doctype html>/i)
   assert.match(html, /<title>[^<]*操作指引/, 'the page must title itself')
-  for (const label of ['Obsidian', 'SiYuan', 'Joplin', 'Notion', 'Yuque', 'ima']) {
+  for (const label of ['Obsidian', 'SiYuan', 'Joplin', 'Notion', 'Yuque', 'ima', 'Feishu']) {
     assert.ok(html.includes(label), `the guide must document ${label}`)
   }
   // The ima section must describe the real API path, not a manual import.

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "笔记保存",
-    "description": "把对话、本轮或单条消息一键保存为 Obsidian / 思源 / Joplin / Notion / 语雀 笔记，或直接写入 ima 笔记。"
+    "description": "把对话、本轮或单条消息一键保存为 Obsidian / 思源 / Joplin / Notion / 语雀 笔记，或直接写入 ima、飞书云文档。"
   },
   "action": {
     "save": "保存为笔记",
